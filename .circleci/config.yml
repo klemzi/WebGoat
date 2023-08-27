@@ -16,7 +16,8 @@ jobs:
     steps:
       - checkout
       - run:
-          command: chmod u+x ./run-depcheck.sh && ./run-depcheck.sh
+          command: |
+            chmod u+x ./run-depcheck.sh && ./run-depcheck.sh
           when: on_fail
 
 workflows:
