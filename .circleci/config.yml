@@ -18,11 +18,7 @@ jobs:
       - run:
           command: |
             chmod u+x ./run-depcheck.sh && ./run-depcheck.sh
-          when: on_fail
-      - store_artifacts:
-          path: ./reports/*.csv
-          destination: odc-results
-
+          when: always
 workflows:
   version: 2
   webgoat:
