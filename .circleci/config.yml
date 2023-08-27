@@ -11,6 +11,14 @@ jobs:
       - checkout
       - run: echo "This is a test step"
 
+  odc-backend:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          command: chmod u+x ./run-depcheck.sh && ./run-depcheck.sh
+          when: on_fail
+
 workflows:
   version: 2
   webgoat:
