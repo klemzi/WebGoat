@@ -17,7 +17,8 @@ jobs:
       - checkout
       - run:
           command: |
-            chmod u+x ./run-depcheck.sh && ./run-depcheck.sh || true
+            chmod u+x ./run-depcheck.sh && ./run-depcheck.sh
+          when: on_fail
       - store_artifacts:
           path: ./reports/*.csv
           destination: odc-results
