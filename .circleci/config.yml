@@ -18,6 +18,9 @@ jobs:
       - run:
           command: |
             chmod u+x ./run-depcheck.sh && ./run-depcheck.sh || true
+      - store_artifacts:
+          path: ./reports/*.csv
+          destination: odc-results
 
 workflows:
   version: 2
